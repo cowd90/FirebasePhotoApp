@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "428236971964",
+    "project_id": "fir-project-ff5a2",
+    "storage_bucket": "fir-project-ff5a2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428236971964:android:20333675df973eb38ad5b9",
+        "android_client_info": {
+          "package_name": "com.example.firebasephotoapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7hyiwxlZCILKPq0L7KNF1wjdvDQFffhI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
