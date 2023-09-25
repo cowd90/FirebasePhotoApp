@@ -2,25 +2,11 @@ package com.example.firebasephotoapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.firebasephotoapp.Adapter.ArticleAdapter;
-import com.example.firebasephotoapp.asset.Article;
 import com.example.firebasephotoapp.asset.ArticleData;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-import com.google.gson.Gson;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     GridView gridView;
