@@ -63,6 +63,6 @@ public class ArticleData extends AsyncTask<String, String, String> {
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
         adapter = new ArticleAdapter(data, context);
-       gridView.setAdapter(adapter);
+        gridView.setAdapter(adapter);
     }
 }
