@@ -1,0 +1,54 @@
+!pip install simpleai
+from simpleai.search import CspProblem, backtrack
+
+# Define the function that imposes the constraint
+# that neighbors should be different
+def constraint_func(names, values):
+ return values[0] != values[1]
+
+if __name__=='__main__':
+ # Specify the variables
+ names = ('An Giang', 'Đồng Tháp', 'Long An', 'Kiên Giang', 'Cần Thơ',
+ 'Vĩnh Long', 'Tiền Giang', 'Bến Tre', 'Trà Vinh', 'Hậu Giang', 'Sóc Trăng',
+  'Bạc Liêu', 'Cà Mau')
+
+# Define the possible colors
+ colors = dict((name, ['red', 'green', 'blue', 'gray']) for name in
+names)
+               
+# Define the constraints
+ constraints = [
+ (('Long An', 'Tiền Giang'), constraint_func),
+ (('Long An', 'Đồng Tháp'), constraint_func),
+ (('Đồng Tháp', 'An Giang'), constraint_func),
+ (('Đồng Tháp', 'Tiền Giang'), constraint_func),
+ (('Đồng Tháp', 'Vĩnh Long'), constraint_func),
+ (('Đồng Tháp', 'Cần Thơ'), constraint_func),
+ (('An Giang', 'Cần Thơ'), constraint_func),
+ (('An Giang', 'Kiên Giang'), constraint_func),
+ (('Kiên Giang', 'Cần Thơ'), constraint_func),
+ (('Kiên Giang', 'Hậu Giang'), constraint_func),
+ (('Kiên Giang', 'Bạc Liêu'), constraint_func),
+ (('Kiên Giang', 'Cà Mau'), constraint_func),
+ (('Cà Mau', 'Bạc Liêu'), constraint_func),
+ (('Bạc Liêu', 'Hậu Giang'), constraint_func),
+ (('Bạc Liêu', 'Sóc Trăng'), constraint_func),
+ (('Sóc Trăng', 'Hậu Giang'), constraint_func),
+ (('Sóc Trăng', 'Trà Vinh'), constraint_func),
+ (('Hậu Giang', 'Vĩnh Long'), constraint_func),
+ (('Hậu Giang', 'Cần Thơ'), constraint_func),
+ (('Vĩnh Long', 'Cần Thơ'), constraint_func),
+ (('Vĩnh Long', 'Trà Vinh'), constraint_func),
+ (('Vĩnh Long', 'Bến Tre'), constraint_func),
+ (('Vĩnh Long', 'Tiền Giang'), constraint_func),
+ (('Bến Tre', 'Tiền Giang'), constraint_func),
+ ]
+
+# Solve the problem
+ problem = CspProblem(names, colors, constraints)
+
+# Print the solution
+ output = backtrack(problem)
+ print('\nColor mapping:\n')
+ for k, v in output.items():
+  print(k, '==>', v)
